@@ -12,7 +12,7 @@ namespace SkiaSharpGenerator
 {
 	public class CookieDetector
 	{
-		
+		private const string SourceUrl = "https://github.com/mono/mono/raw/{0}/mcs/tools/wasm-tuner/InterpToNativeGenerator.cs";
 		private readonly string branchUrl;
 		private readonly string assemblyPath;
 		private readonly string type;
@@ -22,6 +22,7 @@ namespace SkiaSharpGenerator
 		{
 			assemblyPath = assembly;
 			type = interopType;
+			branchUrl = string.Format(SourceUrl, branchName);
 		}
 
 		public ILogger? Log { get; set; }
